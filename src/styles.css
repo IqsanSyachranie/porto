@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'font.css';
+
+.bg-light .ng-select-container{
+    background: #f3f6f9!important;
+    border: 0!important;
+}
+
+
+.is-invalid > .ng-select-container  {
+    border: 1px solid #f06548!important;
+}
+
+
+.btn {
+    border-radius: 8px!important;
+}
