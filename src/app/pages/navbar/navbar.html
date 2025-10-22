@@ -1,0 +1,29 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a routerLink="/" class="brand-logo">
+        <span class="brand-text">Porto</span>
+      </a>
+    </div>
+
+    <p-menubar [model]="menuItems" styleClass="navbar-menu">
+      <ng-template pTemplate="end">
+        <div class="navbar-actions">
+          <p-button 
+            label="Login" 
+            icon="pi pi-sign-in" 
+            [text]="true"
+            styleClass="p-button-text"
+            routerLink="/login">
+          </p-button>
+          <p-button 
+            label="Get Started" 
+            icon="pi pi-arrow-right" 
+            styleClass="p-button-rounded"
+            routerLink="/register">
+          </p-button>
+        </div>
+      </ng-template>
+    </p-menubar>
+  </div>
+</nav>

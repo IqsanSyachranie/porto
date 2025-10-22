@@ -1,0 +1,59 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section brand-section">
+        <h3 class="footer-brand">Porto</h3>
+        <p class="footer-description">
+          Building amazing web experiences with modern technologies.
+        </p>
+        <div class="social-links">
+          <a 
+            *ngFor="let social of socialLinks" 
+            [href]="social.url" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            [attr.aria-label]="social.label">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks">
+            <a [routerLink]="link.route">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-title">Contact</h4>
+        <ul class="footer-contact">
+          <li>
+            <i class="pi pi-envelope"></i>
+            <span>info@porto.com</span>
+          </li>
+          <li>
+            <i class="pi pi-phone"></i>
+            <span>+62 123 4567 890</span>
+          </li>
+          <li>
+            <i class="pi pi-map-marker"></i>
+            <span>Jakarta, Indonesia</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Porto. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a routerLink="/privacy">Privacy Policy</a>
+        <span class="separator">•</span>
+        <a routerLink="/terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

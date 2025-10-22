@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'font.css';
+@import "primeicons/primeicons.css";
+
+
 
 .bg-light .ng-select-container{
     background: #f3f6f9!important;
@@ -14,4 +17,8 @@
 
 .btn {
     border-radius: 8px!important;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
 }

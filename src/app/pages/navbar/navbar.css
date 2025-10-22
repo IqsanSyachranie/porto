@@ -1,0 +1,143 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  animation: slideDown 0.5s ease-out;
+
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    .brand-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  .brand-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-text {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+  }
+}
+
+::ng-deep {
+  .navbar-menu {
+    background: transparent !important;
+    border: none !important;
+    
+    .p-menubar-root-list {
+      gap: 0.5rem;
+    }
+
+    .p-menuitem-link {
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+
+      &:hover {
+        background: rgba(102, 126, 234, 0.1) !important;
+        
+        .p-menuitem-text,
+        .p-menuitem-icon {
+          color: #667eea !important;
+        }
+      }
+    }
+
+    .p-menuitem-text {
+      transition: color 0.3s ease;
+    }
+  }
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .p-button-text {
+      color: #4a5568;
+      font-weight: 500;
+
+      &:hover {
+        background: rgba(102, 126, 234, 0.1) !important;
+        color: #667eea !important;
+      }
+    }
+
+    .p-button-rounded {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .navbar-container {
+    padding: 0.75rem 1rem;
+  }
+
+  ::ng-deep {
+    .navbar-actions {
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+
+      .p-button {
+        width: 100%;
+      }
+    }
+  }
+}

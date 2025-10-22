@@ -13,6 +13,7 @@ import { Home } from './home/home';
     CommonModule,
     PagesRoutingModule,
     ButtonModule
-  ]
+  ],
+  exports: [Home]
 })
 export class PagesModule { }
